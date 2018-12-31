@@ -1,17 +1,17 @@
 ---
 layout: post
 title:  "有限状态机(FSM)的入门介绍及使用"
-date:   2018-12-02 14:44:00
+date:   2018-12-31 12:50:00
 categories: 设计模式
 tags: 状态机,Spring statemachine
-excerpt: 有限状态机的入门使用
+excerpt: 有限状态机的入门介绍及使用
 mathjax: true
 ---
 
 * content
 {:toc}
 
-在实际开发中，可能会遇到使用一大块的if...else...的代码，并且通常情况下是多层if...else...的嵌套。如果代码有注释还好，可是通过注释梳理整个业务逻辑。如果没有注释，那么只能靠阅读每一个分支，拼出整个的逻辑，并且不一定能保证最终的正确性和完整性。
+在实际开发中，可能会遇到使用一大块的if...else...的代码，并且通常情况下是多层if...else...的嵌套。如果代码有注释还好，可以通过注释梳理整个业务逻辑。如果没有注释，那么只能靠阅读每一个分支，拼出整个的逻辑，并且不一定能保证最终的正确性和完整性。
 
 为了不给别人添麻烦，也为了让自己更容易地维护项目，在这种情况下，如果可以将整个流程分成一个个的状态的变换的话，可以考虑使用有限状态机来编写或重构上述的代码。对于学习过随机过程相关课程的同学，可以回想下，马尔可夫链中的状态转移图从而类比理解状态机中状态变换。整个业务流程在某一个时刻只能处于一个状态，只能执行给定的事件集合，从而触发状态变换。
 
@@ -19,7 +19,7 @@ mathjax: true
 
 使用Spring Statemachine来实现一个灯的状态机：
 
-#### 定义状态
+#### 1. 定义状态
 
 ```
 public enum LightState {
@@ -36,7 +36,7 @@ public enum LightState {
 }
 ```
 
-#### 定义事件
+#### 2. 定义事件
 
 ```
 public enum LightEvent {
@@ -53,7 +53,7 @@ public enum LightEvent {
 }
 ```
 
-#### 配置状态机
+#### 3. 配置状态机
 
 ```
 @Configuration
@@ -102,7 +102,7 @@ public class LightSateMachineConfig extends EnumStateMachineConfigurerAdapter<Li
 }
 ```
 
-#### 使用状态机
+#### 4. 使用状态机
 
 ```
 @Autowired
