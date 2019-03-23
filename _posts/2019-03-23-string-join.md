@@ -43,7 +43,7 @@ JDK时如何实现的呢，查看源码：
         return joiner.toString();
     }
 ```
-可以看出，代码结构类似最开始的代码，使用了StringJoiner，而不是StringBuilder，同时不用每次追加分隔符的语句。
+可以看出，代码结构类似最开始的代码，使用了StringJoiner，而不是StringBuilder，同时没有每次追加分隔符的语句。
 查看源码，StringJoiner原来是Java 8为了方便操作字符串而新增的类，内部的实现仍然是通过StringBuilder实现的：
 ```
     private StringBuilder value;
