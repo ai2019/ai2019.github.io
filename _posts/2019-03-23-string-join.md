@@ -12,7 +12,7 @@ mathjax: true
 {:toc}
 
 在Java 8之前，拼接字符串的通常姿势如下：
-```
+```java
     String DELIMITER = ",";
     List<String> strList = Arrays.asList("1", "2", "3", "4", "5");
     StringBuilder sb = new StringBuilder();
@@ -25,13 +25,13 @@ mathjax: true
     System.out.println(sb);
 ```
 在Java 8之后，通过String.join()方法可以简便地实现字符串拼接：
-```
+```java
     String DELIMITER = ",";
     List<String> strList = Arrays.asList("1", "2", "3", "4", "5");
     System.out.println(String.join(DELIMITER, strList));
 ```
 JDK时如何实现的呢，查看源码：
-```
+```java
     public static String join(CharSequence delimiter,
             Iterable<? extends CharSequence> elements) {
         Objects.requireNonNull(delimiter);
@@ -45,12 +45,12 @@ JDK时如何实现的呢，查看源码：
 ```
 可以看出，代码结构类似最开始的代码，使用了StringJoiner，而不是StringBuilder，同时没有每次追加分隔符的语句。
 查看源码，StringJoiner原来是Java 8为了方便操作字符串而新增的类，内部的实现仍然是通过StringBuilder实现的：
-```
+```java
     private StringBuilder value;
 ```
 以后，可以使用StringJoiner拼接字符串了：
 
-```
+```java
     private static final String DELIMITER = ",";
     private static final String PREFIX = "[";
     private static final String SUFFIX = "]";
@@ -61,14 +61,14 @@ JDK时如何实现的呢，查看源码：
 ```
 可以看到，定义好分隔符，以及可选的前缀、后缀后，只需要通过add方法就可以拼接字符串，非常简便。
 JDK是如何实现的呢，查看源码：
-```
+```java
     public StringJoiner add(CharSequence newElement) {
         prepareBuilder().append(newElement);
         return this;
     }
 ```
 查看prepareBuilder():
-```
+```java
     private StringBuilder prepareBuilder() {
         if (value != null) {
             value.append(delimiter);
@@ -82,7 +82,7 @@ JDK是如何实现的呢，查看源码：
 那么后缀时如何添加的呢？原来重写了toString()方法，在调用toString时才append()后缀。
 
 Java 8拼接字符串的新姿势解锁：
-```
+```java
     public static void main(String[] args) {
         List<String> strList = Arrays.asList("1", "2", "3", "4", "5");
         System.out.println(String.join(DELIMITER, strList));

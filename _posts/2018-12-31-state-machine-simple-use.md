@@ -21,7 +21,7 @@ mathjax: true
 
 #### 1. 定义状态
 
-```
+```java
 public enum LightState {
 
     /**
@@ -38,7 +38,7 @@ public enum LightState {
 
 #### 2. 定义事件
 
-```
+```java
 public enum LightEvent {
 
     /**
@@ -55,7 +55,7 @@ public enum LightEvent {
 
 #### 3. 配置状态机
 
-```
+```java
 @Configuration
 @EnableStateMachine
 public class LightSateMachineConfig extends EnumStateMachineConfigurerAdapter<LightState, LightEvent> {
@@ -104,7 +104,7 @@ public class LightSateMachineConfig extends EnumStateMachineConfigurerAdapter<Li
 
 #### 4. 使用状态机
 
-```
+```java
 @Autowired
 private StateMachine<LightState, LightEvent> lightStateMachine;
 
