@@ -3,7 +3,7 @@ layout: post
 title:  "有限状态机(FSM)的入门介绍及使用"
 date:   2018-12-31 12:50:00
 categories: 设计模式
-tags: 状态机,Spring statemachine
+tags: statemachine,spring statemachine
 excerpt: 有限状态机的入门介绍及使用
 mathjax: true
 ---
