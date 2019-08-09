@@ -7,7 +7,7 @@
 
 # Site settings
 title: AI
-brief-intro: 记录成长，记录生活
+brief-intro: 脚踏实地，仰望星空
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ai2019.github.io" # the base hostname & protocol for your site
 
@@ -23,13 +23,13 @@ zhihu_username:
 linkedIn_username: 
 dribbble_username:
 
-description_footer: 码农的成长记录！
+description_footer: 脚踏实地，记录成长的每一步！
 
 # comments
 # two ways to comment, only choose one, and use your own short name
 # 两种评论插件，选一个就好了，使用自己的 short_name
 duoshuo_shortname: #hygblog
-disqus_shortname: #gaohaoyang
+disqus_shortname: ai9 #gaohaoyang
 
 # statistic analysis 统计代码
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
