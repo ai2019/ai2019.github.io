@@ -12,7 +12,7 @@ mathjax: true
 {:toc}
 
 ### 1. 引入依赖
-通过AOP的方式显示自定义注解，因此需要引入AOP的依赖：
+通过AOP的方式实现自定义注解，因此需要引入AOP的依赖：
 
 ```java
 <dependency>
