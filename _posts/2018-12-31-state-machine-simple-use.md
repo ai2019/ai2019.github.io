@@ -5,7 +5,6 @@ date:   2018-12-31 12:50:00
 categories: 设计模式
 tags: statemachine spring-statemachine
 excerpt: 有限状态机的入门介绍及使用
-mathjax: true
 ---
 
 * content

@@ -5,7 +5,6 @@ date:   2019-03-24 12:00:00
 categories: Java
 tags: thread-pool 线程池
 excerpt: 在Java中实现自定义线程池
-mathjax: true
 ---
 
 * content

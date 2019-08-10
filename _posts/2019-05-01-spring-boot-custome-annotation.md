@@ -5,7 +5,6 @@ date:   2019-05-21 14:00:00
 categories: spring-boot
 tags: spring-boot aop annotation
 excerpt: AOP三步实现自定义注解
-mathjax: true
 ---
 
 * content

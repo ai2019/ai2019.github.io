@@ -5,7 +5,6 @@ date:   2019-03-23 22:00:00
 categories: Java
 tags: Java String StringJoiner
 excerpt: JDK8字符串处理的新姿势
-mathjax: true
 ---
 
 * content
