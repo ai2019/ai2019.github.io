@@ -107,6 +107,34 @@ public class Singleton {
 }
 ```
 
+#### (4)类级内部类式
+
+该方式非常巧妙，利用类级内部类类（static修饰的内部类）和多线程缺省同步的知识，
+可见能够提出该实现方式的同学是基础非常扎实，并勤于思考，具体实现：
+
+```java
+public class Singleton {
+
+    private Singleton() {
+    }
+
+    /**
+     * 静态内部类，只有被调用时才会装载，从而实现延迟加载
+     */
+    private static class SingletonHolder {
+        
+        /**
+         * 静态属性，JVM保证线程安全
+         */
+        private static Singleton instance = new Singleton();
+    }
+
+    public static Singleton getInstance() {
+        return SingletonHolder.instance;
+    }
+}
+```
+
 ### 4. 模式本质
 
 控制实例数目。
