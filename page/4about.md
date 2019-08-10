@@ -17,6 +17,6 @@ type: page
 
 * email：pq.ai@outlook.com
 
-## Comments
+## 留言板
 
 {% include comments.html %}
