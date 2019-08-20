@@ -14,20 +14,20 @@ excerpt: 使用Java的Currency类获取不同国家的货币
 
 ### 1. 获取货币实例
 
-Currency将构造方法私有化，使用了单例模式，因此同一个货币JVM中只有一个实例。
+Currency将构造方法私有化，使用了单例模式，因此同一个货币在JVM中只有一个实例。
 
-#### （1）获取全部货币
+#### (1)获取全部货币
 ```java
 Set<Currency> currencySet = Currency.getAvailableCurrencies();
 ```
 
-#### （2）根据国家获取货币实例
+#### (2)根据国家获取货币实例
 
 ```java
 Currency currency = Currency.getInstance(Locale.US);
 ```
 
-#### （3）根据货币字母编码获取货币实例
+#### (3)根据货币字母编码获取货币实例
 ```java
 Currency currency = Currency.getInstance("CNY");
 ```
@@ -37,7 +37,6 @@ Currency currency = Currency.getInstance("CNY");
 获取货币实例后，就可以获取货币的名称、编码等信息：
 
 ```java
-// 根据货币字母编码获取货币
 Currency currency = Currency.getInstance(Locale.CHINA);
 System.out.println("货币名称：" + currency.getDisplayName());
 System.out.println("货币编码：" + currency.getCurrencyCode());
@@ -53,7 +52,7 @@ System.out.println("货币数字编码：" + currency.getNumericCode());
 货币数字编码：156
 ```
 
-> 注意：试验了多个国家的货币后，发现货币符号并不一定都是我们经常理解的符号，例如美国的货币符号是：USD，而不是$。
+> 注意：试验了多个国家的货币后，发现Currency实例得到的货币符号并不都是我们经常理解的符号，例如Currency得到的美国的货币符号是：USD，而不是我们通常理解的$。
 
 ### 3. ISO的货币数据
 
