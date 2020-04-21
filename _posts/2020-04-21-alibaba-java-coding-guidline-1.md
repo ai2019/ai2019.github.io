@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "2020阿里巴巴Java开发手册（泰山版）学习-1"
+title:  "2020阿里巴巴Java开发手册（泰山版）学习-日期规约"
 date:   2020-04-21 14:00:00
 categories: Java
-tags: Java 阿里巴巴 开发手册 学习
+tags: Java 阿里巴巴 开发手册 日期规约
 excerpt: 阅读2020阿里巴巴Java开发手册（泰山版），查漏补缺。
 mathjax: true
 ---
@@ -15,7 +15,7 @@ mathjax: true
 
 2020阿里巴巴Java开发手册（泰山版）下载地址：https://developer.aliyun.com/topic/java2020
 
-【Java七天学习训练营】Day1，《日期时间规约》学习地址：https://developer.aliyun.com/article/754900
+《日期时间规约》学习地址：https://developer.aliyun.com/article/754900
 
 ### 2. 查漏补缺
 
