@@ -82,7 +82,7 @@ mathjax: true
      *
      * @return
      */
-    public static int hourOfThisDay() {
+    public static int hourOfDay() {
         return Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
     }
 
