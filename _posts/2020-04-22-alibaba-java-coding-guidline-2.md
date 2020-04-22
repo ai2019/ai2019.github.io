@@ -32,11 +32,13 @@ MySQL的官方文档中指出还是要有参数的：https://dev.mysql.com/doc/r
 **注意**
 
 > count(*)会统计值为NULL的行
+
 > count(列名)不会统计此列为NULL值的行
 
 ##### (2)【强制】count(distinct col) 计算该列除NULL之外的不重复数量
 
 > count(distinct col) 计算该列除NULL之外的不重复数量；
+
 > count(distinct col1, col2) 如果其中一列全为NULL，那么即使另一列有不同的值，也返回为0。
 
 ##### (3)【强制】当某一列的值全是NULL时，count(col)的返回结果为0，但sum(col)的返回结果为NULL，因此使用sum()时需注意NPE问题。
