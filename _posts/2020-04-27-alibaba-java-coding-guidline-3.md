@@ -19,7 +19,7 @@ mathjax: true
 
 ### 2. 查漏补缺
 
-##### (1) 强制】关于hashCode和equals的处理，遵循如下规则：
+##### (1)【强制】关于hashCode和equals的处理，遵循如下规则：
 
 - 只要重写equals，就必须重写hashCode；
 - 由于Set存储的是不重复的对象，依据hashCode和equals进行判断，所以Set存储的对象必须重写这两个方法；
@@ -29,7 +29,7 @@ mathjax: true
 
 > String正因为重写了hashCode和equals方法，所以我们可以非常愉快地使用String对象作为key来使用
 
-##### (2)使用Map的方法keySet()/values()/entrySet()返回集合对象时，不可以对其进行添加元素操作，否则会抛出UnsupportedOperationException异常。
+##### (2)【强制】使用Map的方法keySet()/values()/entrySet()返回集合对象时，不可以对其进行添加元素操作，否则会抛出UnsupportedOperationException异常。
 
 在使用迭代器时，不能对集合进行修改。
 
@@ -70,7 +70,7 @@ if(CollectionUtils.isEmpty(list)){
 
 对于其他人返回的数据一定要谨慎处理。
 
-##### （5）ArrayList的subList结果不可强转成ArrayList，否则会抛出ClassCastException异常：java.util.RandomAccessSubList cannot be cast to java.util.ArrayList ;
+##### （5）【强制】ArrayList的subList结果不可强转成ArrayList，否则会抛出ClassCastException异常：java.util.RandomAccessSubList cannot be cast to java.util.ArrayList ;
 
 `subList`返回的是 `ArrayList` 的内部类 `SubList`，并不是 `ArrayList` ，而是 `ArrayList` 的一个视图，对于`SubList`子列表的所有操作最终会反映到原列表上。
 
@@ -107,7 +107,7 @@ array = list.toArray(new String[0]);
 
 ##### （9）【强制】使用工具类Arrays.asList()把数组转换成集合时，不能使用其修改集合相关的方法，它的add/remove/clear方法会抛出UnsupportedOperationException异常。
 
-这一点之前没有关注过，后续要关注。
+（这一点之前没有关注过，后续要关注）
 
 asList的返回对象是一个Arrays内部类，并没有实现集合的修改方法。Arrays.asList体现的是适配器模式，只是转换接口，后台的数据仍是数组。
 
